@@ -1,0 +1,91 @@
+﻿<UserControl
+    x:Class="CodeEditor.Components.MenuBar"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Height="Auto"
+    VerticalAlignment="Top">
+
+    <UserControl.Resources>
+        <!-- NeonButtonStyle that uses DynamicResource -->
+        <Style x:Key="NeonButtonStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}"/>
+            <Setter Property="Background" Value="{DynamicResource BackgroundBrush}"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="10,4"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="4" Background="{TemplateBinding Background}">
+                            <ContentPresenter
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{DynamicResource AccentBrush}"/>
+                                <Setter Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect
+                                            Color="{Binding RelativeSource={RelativeSource Self}, Path=Foreground.(SolidColorBrush.Color)}"
+                                            BlurRadius="15"
+                                            ShadowDepth="0"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- MenuItem style with DynamicResource -->
+        <Style TargetType="MenuItem">
+            <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Padding" Value="6,2"/>
+            <Setter Property="Background" Value="{DynamicResource BackgroundBrush}"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="{DynamicResource AccentBrush}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid Background="{DynamicResource BackgroundBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Menu Grid.Column="0" Background="{DynamicResource BackgroundBrush}">
+            <MenuItem Header="_File">
+                <MenuItem Header="_New" Click="NewFile_Click"/>
+                <MenuItem Header="_Open..." Click="OpenFile_Click"/>
+                <MenuItem Header="_Save" Click="SaveFile_Click"/>
+                <Separator/>
+                <MenuItem Header="E_xit" Click="Exit_Click"/>
+            </MenuItem>
+            <MenuItem Header="_Edit">
+                <MenuItem Header="_Find..." Click="Find_Click"/>
+                <MenuItem Header="_Word Wrap" IsCheckable="True" Click="WordWrap_Click"/>
+            </MenuItem>
+            <MenuItem Header="_View">
+                <MenuItem Header="_Dark Theme" Click="DarkTheme_Click"/>
+                <MenuItem Header="_Light Theme" Click="LightTheme_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <Button
+            Style="{StaticResource NeonButtonStyle}"
+            Content="🕒 Productivity"
+            Click="ProductivityBtn_Click"
+            Grid.Column="1"/>
+    </Grid>
+</UserControl>
+
+

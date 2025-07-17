@@ -1,0 +1,149 @@
+﻿<UserControl
+    x:Class="CodeEditor.Components.ProductivityTab"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:components="clr-namespace:CodeEditor.Components"
+    Width="300"
+    Background="{DynamicResource BackgroundBrush}">
+    <UserControl.Resources>
+        <components:IndentToMarginConverter x:Key="IndentToMarginConverter"/>
+        <Style TargetType="TextBox" x:Key="EditableTaskBox">
+            <Setter Property="BorderThickness" Value="0,0,0,1"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Padding" Value="4"/>
+            <Setter Property="CaretBrush" Value="Black"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Style.Triggers>
+                <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                    <Setter Property="BorderBrush" Value="#9A42FF"/>
+                    <Setter Property="Background" Value="#22000000"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Border BorderThickness="1"
+            BorderBrush="{DynamicResource AccentBrush}"
+            Background="{DynamicResource BackgroundBrush}">
+        <DockPanel>
+            <!-- Top bar docked at top -->
+            <Grid DockPanel.Dock="Top"
+                  Background="{DynamicResource AccentBrush}"
+                  Height="35">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock
+                    Text="Productivity"
+                    VerticalAlignment="Center"
+                    Margin="10,0"
+                    Foreground="Black"
+                    FontWeight="Bold"/>
+
+                <Button
+                    Grid.Column="1"
+                    Content="X"
+                    Margin="0,0,5,0"
+                    Width="25"
+                    Height="25"
+                    VerticalAlignment="Center"
+                    Click="Close_Click"/>
+            </Grid>
+
+            <!-- Scrollable area with sections -->
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel Margin="5">
+                    <!-- Pomodoro Section -->
+                    <Expander Header="Pomodoro Timer" IsExpanded="True"
+                        Foreground="{DynamicResource ForegroundBrush}">
+                        <StackPanel Margin="5" x:Name="PomodoroPanel">
+                            <TextBlock
+                                Text="Session Timer:"
+                                Foreground="{DynamicResource ForegroundBrush}"
+                                FontWeight="Bold"/>
+                            <TextBlock
+                                x:Name="PomodoroTimerText"
+                                Text="25:00"
+                                Foreground="{DynamicResource ForegroundBrush}"
+                                FontSize="18"
+                                Margin="0,5,0,5"/>
+                            <Button
+                                x:Name="StartWorkButton"
+                                Content="Start Work"
+                                Click="StartWorkButton_Click"
+                                Margin="0,0,0,5"/>
+                            <StackPanel x:Name="DescriptionPanel" Visibility="Collapsed">
+                                <TextBlock
+                                    Text="What did you accomplish?"
+                                    Foreground="{DynamicResource ForegroundBrush}"/>
+                                <TextBox
+                                    x:Name="SprintDescriptionBox"
+                                    Margin="0,5,0,5"/>
+                                <Button
+                                    Content="Start Break"
+                                    Click="StartBreakButton_Click"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Expander>
+                    <!-- Sprint Tracking Section -->
+                    <Expander Header="Pomodoro Sprints" IsExpanded="True"
+                      Foreground="{DynamicResource ForegroundBrush}"
+                      Margin="0,5,0,0">
+                        <StackPanel Margin="5">
+                            <ItemsControl x:Name="SprintList">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border BorderBrush="{DynamicResource AccentBrush}" BorderThickness="1" Margin="0,0,0,5" Padding="5">
+                                            <StackPanel>
+                                                <TextBlock Text="{Binding Title}" FontWeight="Bold" Foreground="{DynamicResource ForegroundBrush}"/>
+                                                <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Foreground="{DynamicResource ForegroundBrush}"/>
+                                                <TextBlock Text="{Binding TimeInfo}" FontStyle="Italic" Foreground="{DynamicResource ForegroundBrush}"/>
+                                            </StackPanel>
+                                        </Border>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+                    </Expander>
+
+
+                    <!-- Task List Section -->
+                    <Expander Header="Task List" IsExpanded="True"
+                        Foreground="{DynamicResource ForegroundBrush}"
+                        Margin="0,5,0,0">
+                        <StackPanel Margin="5">
+                            <TextBlock
+                                Text="Press Enter to create a new task. Press Tab to nest a task."
+                                Foreground="{DynamicResource ForegroundBrush}"
+                                TextWrapping="Wrap"
+                                Margin="0,0,0,5"/>
+                            <Button Content="Add Task"
+                                Click="AddTaskButton_Click"
+                                Margin="0,0,0,5"
+                                Width="80"/>
+                            <ItemsControl x:Name="TaskList">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <DockPanel Margin="{Binding IndentLevel, Converter={StaticResource IndentToMarginConverter}}">
+                                            <CheckBox IsChecked="{Binding IsCompleted, Mode=TwoWay}"
+                                                VerticalAlignment="Center"/>
+                                            <TextBox
+                                                Style="{StaticResource EditableTaskBox}"
+                                                Foreground="{DynamicResource ForegroundBrush}"
+                                                Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                KeyDown="TaskTextBox_KeyDown"
+                                                GotFocus="TaskTextBox_GotFocus"/>
+                                        </DockPanel>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+                    </Expander>
+
+                </StackPanel>
+            </ScrollViewer>
+        </DockPanel>
+    </Border>
+</UserControl>

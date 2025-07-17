@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="CodeEditor.Pages.MainEditorPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:components="clr-namespace:CodeEditor.Components"
+    Title="Editor"
+    Background="{DynamicResource BackgroundBrush}">
+
+    <DockPanel>
+        <!-- FindBar component docked under the MenuBar -->
+        <components:FindBar x:Name="FindBar" DockPanel.Dock="Top"/>
+        <!-- Productivity tab on the right -->
+        <components:ProductivityTab x:Name="ProductivityTab" DockPanel.Dock="Right"/>
+
+        <!-- Main editor area -->
+        <RichTextBox
+            Name="EditorTextBox"
+            Foreground="{DynamicResource ForegroundBrush}"
+            Background="{DynamicResource BackgroundBrush}"
+            VerticalScrollBarVisibility="Auto"
+            HorizontalScrollBarVisibility="Auto"
+            FontFamily="Consolas"
+            FontSize="14"
+            AcceptsTab="True"
+            Margin="0"/>
+
+        <!-- Status Bar -->
+        <StatusBar DockPanel.Dock="Bottom"
+                   Background="{DynamicResource BackgroundBrush}">
+            <StatusBarItem>
+                <TextBlock Name="StatusText" 
+                           Text="Ready"
+                           Foreground="{DynamicResource ForegroundBrush}"/>
+            </StatusBarItem>
+        </StatusBar>
+    </DockPanel>
+</Page>
+
