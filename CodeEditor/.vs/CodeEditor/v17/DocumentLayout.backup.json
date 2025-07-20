@@ -1,12 +1,105 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "A:\\DotNetApps\\CustomCodeEditor\\CodeEditor\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CD02A4C1-F314-49A4-93C2-07356311EC2E}|CodeEditor.csproj|a:\\dotnetapps\\customcodeeditor\\codeeditor\\components\\marginconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD02A4C1-F314-49A4-93C2-07356311EC2E}|CodeEditor.csproj|solutionrelative:components\\marginconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD02A4C1-F314-49A4-93C2-07356311EC2E}|CodeEditor.csproj|a:\\dotnetapps\\customcodeeditor\\codeeditor\\components\\productivitytab.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD02A4C1-F314-49A4-93C2-07356311EC2E}|CodeEditor.csproj|solutionrelative:components\\productivitytab.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD02A4C1-F314-49A4-93C2-07356311EC2E}|CodeEditor.csproj|a:\\dotnetapps\\customcodeeditor\\codeeditor\\components\\findbar.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD02A4C1-F314-49A4-93C2-07356311EC2E}|CodeEditor.csproj|solutionrelative:components\\findbar.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD02A4C1-F314-49A4-93C2-07356311EC2E}|CodeEditor.csproj|a:\\dotnetapps\\customcodeeditor\\codeeditor\\components\\syntaxhighlighter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD02A4C1-F314-49A4-93C2-07356311EC2E}|CodeEditor.csproj|solutionrelative:components\\syntaxhighlighter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD02A4C1-F314-49A4-93C2-07356311EC2E}|CodeEditor.csproj|a:\\dotnetapps\\customcodeeditor\\codeeditor\\pages\\maineditorpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD02A4C1-F314-49A4-93C2-07356311EC2E}|CodeEditor.csproj|solutionrelative:pages\\maineditorpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainEditorPage.xaml.cs",
+              "DocumentMoniker": "A:\\DotNetApps\\CustomCodeEditor\\CodeEditor\\Pages\\MainEditorPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\MainEditorPage.xaml.cs",
+              "ToolTip": "A:\\DotNetApps\\CustomCodeEditor\\CodeEditor\\Pages\\MainEditorPage.xaml.cs",
+              "RelativeToolTip": "Pages\\MainEditorPage.xaml.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwCwAAACUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T18:01:21.31Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SyntaxHighlighter.cs",
+              "DocumentMoniker": "A:\\DotNetApps\\CustomCodeEditor\\CodeEditor\\Components\\SyntaxHighlighter.cs",
+              "RelativeDocumentMoniker": "Components\\SyntaxHighlighter.cs",
+              "ToolTip": "A:\\DotNetApps\\CustomCodeEditor\\CodeEditor\\Components\\SyntaxHighlighter.cs",
+              "RelativeToolTip": "Components\\SyntaxHighlighter.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAgwEkAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T18:12:42.504Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FindBar.xaml.cs",
+              "DocumentMoniker": "A:\\DotNetApps\\CustomCodeEditor\\CodeEditor\\Components\\FindBar.xaml.cs",
+              "RelativeDocumentMoniker": "Components\\FindBar.xaml.cs",
+              "ToolTip": "A:\\DotNetApps\\CustomCodeEditor\\CodeEditor\\Components\\FindBar.xaml.cs",
+              "RelativeToolTip": "Components\\FindBar.xaml.cs",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAmwHwAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T18:12:39.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductivityTab.xaml.cs",
+              "DocumentMoniker": "A:\\DotNetApps\\CustomCodeEditor\\CodeEditor\\Components\\ProductivityTab.xaml.cs",
+              "RelativeDocumentMoniker": "Components\\ProductivityTab.xaml.cs",
+              "ToolTip": "A:\\DotNetApps\\CustomCodeEditor\\CodeEditor\\Components\\ProductivityTab.xaml.cs",
+              "RelativeToolTip": "Components\\ProductivityTab.xaml.cs",
+              "ViewState": "AgIAAO0AAAAAAAAAAAAgwAcBAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T18:12:41.703Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MarginConverter.cs",
+              "DocumentMoniker": "A:\\DotNetApps\\CustomCodeEditor\\CodeEditor\\Components\\MarginConverter.cs",
+              "RelativeDocumentMoniker": "Components\\MarginConverter.cs",
+              "ToolTip": "A:\\DotNetApps\\CustomCodeEditor\\CodeEditor\\Components\\MarginConverter.cs",
+              "RelativeToolTip": "Components\\MarginConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T18:12:40.601Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
